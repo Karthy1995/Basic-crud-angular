@@ -1,0 +1,19 @@
+<h1>Edit Details</h1>
+<div *ngIf="userData">
+    <div>
+        <label>Name:</label>
+        <input type="text" value="{{userData.Name}}" [(ngModel)]="userData.Name" id="uname" name="uname" required #uname="ngModel">
+        <span *ngIf="uname.invalid" class="text-danger">*</span>
+        
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number"value="{{userData.Age}}" [(ngModel)]="userData.Age" [min]="18" [max]="80">
+    </div>
+    <div>
+        <label>Mark</label>
+        <input type="number" value="{{userData.Mark}}"[(ngModel)]="userData.Mark" placeholder="mark">
+    </div>
+    <button (click)="Update()">Update</button>
+</div>
+

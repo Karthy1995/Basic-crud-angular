@@ -1,0 +1,23 @@
+
+<h1>All Student Details</h1>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mark</th>
+            </tr>
+        </thead>
+<tbody>
+    <tr *ngFor="let p of Getdata">
+    <td>{{p.Name}}</td>
+    <td>{{p.Age}}</td>
+    <td>{{p.Mark}}</td>
+    <td ><button routerLink="/details/{{p.Id}}">Details</button></td>
+    <td ><button routerLink="/edit/{{p.Id}}">Edit</button></td>
+    <td ><button class="delete" title="delete student" (click)="delete(p.Id)">delete</button></td>
+    </tr>
+</tbody>
+    </table>
+</div>

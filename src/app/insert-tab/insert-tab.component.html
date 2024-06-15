@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="userData.Name" id="uname" name="uname" required #uname="ngModel">
+        <span *ngIf="uname.invalid" class="text-danger">*</span>
+        
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="number" [(ngModel)]="userData.Age" [min]="18" [max]="80">
+    </div>
+    <div>
+        <label>Mark</label>
+        <input type="number" [(ngModel)]="userData.Mark" placeholder="mark">
+    </div>
+    <button (click)="addProduct()">Save</button>
+</div>
